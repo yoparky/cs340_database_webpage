@@ -72,8 +72,8 @@ CREATE TABLE Order_items(
 DROP TABLE IF EXISTS `Performances`;
 CREATE TABLE Performances(
 	performance_id INT AUTO_INCREMENT NOT NULL,
-	movie_id INT,
-	actor_id INT,
+	movie_id INT NOT NULL,
+	actor_id INT NOT NULL,
 	PRIMARY KEY (performance_id),
 	FOREIGN KEY (movie_id) REFERENCES Movies(movie_id) 
     ON DELETE CASCADE,
