@@ -48,7 +48,7 @@ CREATE TABLE Actors(
 DROP TABLE IF EXISTS `Orders`;
 CREATE TABLE Orders(
 	order_id INT AUTO_INCREMENT NOT NULL,
-	customer_id INT,
+	customer_id INT NOT NULL,
 	employee_id INT,
 	order_date DATETIME NOT NULL,
 	credit_card_num VARCHAR(16) NOT NULL,

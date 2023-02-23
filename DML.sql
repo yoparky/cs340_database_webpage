@@ -5,7 +5,7 @@
 -- Dropdown menus
 --   Populate Employee dropdown
 SELECT Employees.employee_id, Employees.first, Employees.last FROM Employees;
---   populate Customers dropdown
+--   populate Customers dropdown, unlikely to use
 SELECT Customers.customer_id, Customers.first, Customers.last FROM Customers;
 
 -- Employees-----------------------
