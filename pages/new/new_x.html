@@ -5,23 +5,34 @@
     <title>Title</title>
 </head>
 <body>
+<!-- Delete above -->
 
-</div> <!-- browse -->
-<div id="insert">
-    <form method="POST" id="add_x">
-        <legend><strong>Add X</strong></legend>
-        <fieldset class="fields">
+{% extends "base.html" %}
 
-            <label> X </label> <input type="text" name="fname">
+{% block title %}TITLE{% endblock %}
 
-        </fieldset>
+{% block content %}
+<h1> ADD NEW TITLE </h1>
 
-        <input class="btn" type="submit" id="addPerson" value="Add Person">
-        <input class="btn" type="button" value="cancel" >
-    </form>
-</div><!-- insert -->
+<form method="POST">
+    <h2 align="center">Login</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="text">text</label>
+        <input type="text" class="form-control" id="text" name="text" placeholder="Enter text">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="button" class="btn btn-primary">Cancel</button>
+
+</form>
+{% endblock %}
 
 
 
+<!-- Delete Below -->
 </body>
 </html>
