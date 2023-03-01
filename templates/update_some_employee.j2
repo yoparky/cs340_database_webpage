@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="update">
+    <form method="POST" id="">
+        <legend><strong>Update Employee</strong></legend>
+        <fieldset class="fields">
+            <label> ID: </label> X {{ employee["id"] }}
+            <br></br>
+            <label> first name </label> <input type="text" name="employeeFirst" value="">
+            <br></br>
+            <label> last name </label> <input type="text" name="employeeLast" value="">
+            <br></br>
+            <label> street name </label> <input type="text" name="employeeStreet" value="">
+            <br></br>
+            <label> city name </label> <input type="text" name="employeeCity" value="">
+            <br></br>
+            <label> state name </label> <input type="text" name="employeeState" value="">
+            <br></br>
+            <label> phone </label> <input type="text" name="employeePhone" value="">
+
+            <br></br>
+            <input class="btn" type="submit" id="" value=" Update " href = "/update_some_employee/{{ employee["id"]}}">
+            <input class="btn" type="button" value="cancel"  >
+    </form>
+</div><!-- update -->
+
+</body>
+</html>

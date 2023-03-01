@@ -13,7 +13,7 @@ SELECT Customers.customer_id, Customers.first, Customers.last FROM Customers;
 SELECT Employees.employee_id, Employees.first, Employees.last, Employees.street, Employees.city, Employees.state, Employees.phone
 FROM Employees;
 --   Add Employee
-INSERT INTO Employees (first, last, street, city, state, phone) 
+INSERT INTO Employees (first, last, street, city, state, phone)
 Values (:employeeFirst, :employeeLast, :employeeStreet, :employeeCity, :employeeState, :employeePhone);
 --   Delete Employee
 DELETE FROM Employees WHERE id = :employeeId;
@@ -26,7 +26,7 @@ WHERE employee_id = :employeeId;
 SELECT order_id, customer_id, employee_id, credit_card_num, order_date, order_fulfilled
 FROM Orders;
 --   Add Orders
-INSERT INTO Orders (customer_id, employee_id, credit_card_num, order_date, order_fulfilled) 
+INSERT INTO Orders (customer_id, employee_id, credit_card_num, order_date, order_fulfilled)
 Values (:cidFromDrop, :eidFromDrop, :creditCardNum, :orderDate, :orderFulfilled);
 --   Delete Orders
 DELETE FROM Orders WHERE order_id = :orderId;
@@ -102,4 +102,3 @@ DELETE FROM Order_items WHERE order_id = :orderId AND movie_id AND :movieId;
 --   Update Order_items
 UPDATE Order_items SET movie_id = :midFromDropdown, quantity = :quantity
 WHERE order_id = :orderId AND movie_id =:midFromDropdown;
-

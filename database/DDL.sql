@@ -4,9 +4,9 @@
 
 SET FOREIGN_KEY_CHECKS=0;
 SET AUTOCOMMIT = 0;
--- 
+--
 -- Create Tables
--- 
+--
 DROP TABLE IF EXISTS `Customers`;
 CREATE TABLE Customers(
 	id INT AUTO_INCREMENT NOT NULL,
@@ -75,15 +75,15 @@ CREATE TABLE Performances(
 	movie_id INT NOT NULL,
 	actor_id INT NOT NULL,
 	PRIMARY KEY (performance_id),
-	FOREIGN KEY (movie_id) REFERENCES Movies(movie_id) 
+	FOREIGN KEY (movie_id) REFERENCES Movies(movie_id)
     ON DELETE CASCADE,
 	FOREIGN KEY (actor_id) REFERENCES Actors(actor_id)
     ON DELETE CASCADE
 );
 
--- 
+--
 -- Sample Values
--- 
+--
 
 INSERT INTO Customers (first, last, street, city, state, phone)
 VALUE ('YJ', 'Park', '2415 Chestnut St', 'Philadelphia', 'PA', '1234567890'),
@@ -104,42 +104,42 @@ VALUE ('1', '2', '2022-01-11','1111222233334444', 0),
 ('1', '2', '2022-01-04', '5555666677778888', 0);
 
 INSERT INTO Movies (title, stock, price)
-VALUE ('Aliens', 3, 12.99) , 
-( "The Purge" , 13 , 2.99 ) , 
-( "The Black Phone" , 21 , 5.99 ) ; 
+VALUE ('Aliens', 3, 12.99) ,
+( "The Purge" , 13 , 2.99 ) ,
+( "The Black Phone" , 21 , 5.99 ) ;
 
-INSERT INTO Order_items (order_id, movie_id, quantity) 
-VALUE ( 1 , (SELECT movie_id FROM Movies WHERE title='The Black Phone') , 4 ) , 
+INSERT INTO Order_items (order_id, movie_id, quantity)
+VALUE ( 1 , (SELECT movie_id FROM Movies WHERE title='The Black Phone') , 4 ) ,
 ( 1 , (SELECT movie_id FROM Movies WHERE title='The Purge') , 2 ) ,
-( 2 , (SELECT movie_id FROM Movies WHERE title='Aliens') , 8 ) , 
-( 3 , (SELECT movie_id FROM Movies WHERE title='The Purge') , 5 ) , 
-( 4 , (SELECT movie_id FROM Movies WHERE title='Aliens') , 1 ) , 
-( 5 , (SELECT movie_id FROM Movies WHERE title='The Purge') , 3 ) ; 
+( 2 , (SELECT movie_id FROM Movies WHERE title='Aliens') , 8 ) ,
+( 3 , (SELECT movie_id FROM Movies WHERE title='The Purge') , 5 ) ,
+( 4 , (SELECT movie_id FROM Movies WHERE title='Aliens') , 1 ) ,
+( 5 , (SELECT movie_id FROM Movies WHERE title='The Purge') , 3 ) ;
 
 INSERT INTO Actors(first, last)
-Value ('Ethan', 'Hawke'), 
-('Lena', 'Headey'), 
-( 'Max' , 'Burkholder' ) , 
-('Adelaide', 'Kane'),  
-('Sigourney', 'Weaver'), 
+Value ('Ethan', 'Hawke'),
+('Lena', 'Headey'),
+( 'Max' , 'Burkholder' ) ,
+('Adelaide', 'Kane'),
+('Sigourney', 'Weaver'),
 ('Michael', 'Biehn'),
 ('Carrie', 'Henn'),
 ('Paul', 'Reiser') ,
-( "Mason" , "Thames" ) , 
-( "Jeremy" , "Davies" ) , 
-( "Rebecca" , "Clarke") ; 
+( "Mason" , "Thames" ) ,
+( "Jeremy" , "Davies" ) ,
+( "Rebecca" , "Clarke") ;
 
 INSERT INTO Performances (movie_id, actor_id)
-VALUE ( (SELECT movie_id FROM Movies WHERE title='The Purge') , (SELECT actor_id FROM Actors WHERE first='Ethan' AND last='Hawke') ) , 
-( (SELECT movie_id FROM Movies WHERE title='The Purge') , (SELECT actor_id FROM Actors WHERE first='Lena' AND last='Headey') ) , 
-( (SELECT movie_id FROM Movies WHERE title='The Purge') , (SELECT actor_id FROM Actors WHERE first='Max' AND last='Burkholder') ) , 
-( (SELECT movie_id FROM Movies WHERE title='The Purge') , (SELECT actor_id FROM Actors WHERE first='Adelaide' AND last='Kane') ) , 
-( (SELECT movie_id FROM Movies WHERE title='Aliens') , (SELECT actor_id FROM Actors WHERE first='Sigourney' AND last='Weaver') ) , 
-( (SELECT movie_id FROM Movies WHERE title='Aliens') , (SELECT actor_id FROM Actors WHERE first='Michael' AND last='Biehn') ) , 
-( (SELECT movie_id FROM Movies WHERE title='Aliens') , (SELECT actor_id FROM Actors WHERE first='Carrie' AND last='Henn') ) , 
-( (SELECT movie_id FROM Movies WHERE title='Aliens') , (SELECT actor_id FROM Actors WHERE first='Paul' AND last='Reiser') ) , 
-( (SELECT movie_id FROM Movies WHERE title='The Black Phone') , (SELECT actor_id FROM Actors WHERE first='Mason' AND last='Thames') ) , 
-( (SELECT movie_id FROM Movies WHERE title='The Black Phone') , (SELECT actor_id FROM Actors WHERE first='Jeremy' AND last='Davies') ) , 
+VALUE ( (SELECT movie_id FROM Movies WHERE title='The Purge') , (SELECT actor_id FROM Actors WHERE first='Ethan' AND last='Hawke') ) ,
+( (SELECT movie_id FROM Movies WHERE title='The Purge') , (SELECT actor_id FROM Actors WHERE first='Lena' AND last='Headey') ) ,
+( (SELECT movie_id FROM Movies WHERE title='The Purge') , (SELECT actor_id FROM Actors WHERE first='Max' AND last='Burkholder') ) ,
+( (SELECT movie_id FROM Movies WHERE title='The Purge') , (SELECT actor_id FROM Actors WHERE first='Adelaide' AND last='Kane') ) ,
+( (SELECT movie_id FROM Movies WHERE title='Aliens') , (SELECT actor_id FROM Actors WHERE first='Sigourney' AND last='Weaver') ) ,
+( (SELECT movie_id FROM Movies WHERE title='Aliens') , (SELECT actor_id FROM Actors WHERE first='Michael' AND last='Biehn') ) ,
+( (SELECT movie_id FROM Movies WHERE title='Aliens') , (SELECT actor_id FROM Actors WHERE first='Carrie' AND last='Henn') ) ,
+( (SELECT movie_id FROM Movies WHERE title='Aliens') , (SELECT actor_id FROM Actors WHERE first='Paul' AND last='Reiser') ) ,
+( (SELECT movie_id FROM Movies WHERE title='The Black Phone') , (SELECT actor_id FROM Actors WHERE first='Mason' AND last='Thames') ) ,
+( (SELECT movie_id FROM Movies WHERE title='The Black Phone') , (SELECT actor_id FROM Actors WHERE first='Jeremy' AND last='Davies') ) ,
 ( (SELECT movie_id FROM Movies WHERE title='The Black Phone') , (SELECT actor_id FROM Actors WHERE first='Rebecca' AND last='Clarke') ) ;
 
 
@@ -155,3 +155,4 @@ drop table Orders;
 drop table Order_items;
 drop table Performances;
 */
+

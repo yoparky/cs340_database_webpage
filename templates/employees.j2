@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+    />
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+    />
+<!-- TITLE HERE -->
+    <!-- <title>{% block title %}Home{% endblock %}</title> -->
+    <title>Employees</title>
+</head>
+
+<body>
+
+<!-- FACTOR TO BASE FILE BLUEPRINT -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" id="home" href="index.html">Home</a>
+            <a class="nav-item nav-link" id="employees" href="employees.html">Employees</a>
+            <a class="nav-item nav-link" id="customers" href="customers.html">Customers</a>
+            <a class="nav-item nav-link" id="movies" href="movies.html">Movies</a>
+            <a class="nav-item nav-link" id="actors" href="actors.html">Actors</a>
+            <a class="nav-item nav-link" id="order_items" href="order_items.html">Order Items</a>
+            <a class="nav-item nav-link" id="orders" href="orders.html">Orders</a>
+            <a class="nav-item nav-link" id="performances" href="performances.html">Performances</a>
+        </div>
+    </div>
+</nav>
+<!-- FACTOR END -->
+
+<div id="container" align="center">
+<!-- CONTENT HERE -->
+<!-- {% block content %}Home{% endblock %} -->
+<p><strong>Browse Employees</strong></p>
+
+<table>
+    <thead>
+
+    <tr>
+        <th><a href="new/new_employee.html">New</a></th>
+        <th><a href="new/new_employee.html">New</a></th>
+        <th>employee_id</th>
+        <th>first</th>
+        <th>last</th>
+        <th>street</th>
+        <th>city</th>
+        <th>state</th>
+        <th>phone</th>
+    </tr>
+
+    <tbody>
+
+    {% for item in employees %}
+    <tr>
+        <!-- <td><a href="#" onClick="updatePerson('this.personID')">Edit</a></td>
+        <td><a href="#" onclick="deletePerson('this.personID')">Delete</a></td> -->
+        <td><a href="edit/edit_employee.html">Edit</a></td>
+        <td><a href="delete/delete_employee.html">Delete</a></td>
+        <td>{{item['id']}}</td>
+        <td>{{item['first']}}</td>
+        <td>{{item['last']}}</td>
+        <td>{{item['street']}}</td>
+        <td>{{item['city']}}</td>
+        <td>{{item['state']}}</td>
+        <td>{{item['phone']}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+
+<script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+></script>
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
